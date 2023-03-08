@@ -13,15 +13,7 @@ int main(int argc, char const *argv[]) {
             auto v = split(line, '\t');
             ip_pool.push_back(split(v.at(0), '.'));
         }
-       /* std::ifstream in("ip_filter.tsv");
-        if(in.is_open()) {
-            for(std::string line; std::getline(in, line);) {
-                auto v = split(line, '\t');
-                ip_pool.push_back(split(v.at(0), '.'));
-            }
-        } else{std::cout << "File open error";}
-        in.close();
-        */
+
         radixSort(ip_pool);
 
         print_pool(ip_pool.begin(), ip_pool.end());
