@@ -1,17 +1,13 @@
 #include "filter_lib.h"
-#include <fstream>
 
-#define UNUSED(variable) (void)variable
-
-int main(int argc, char const *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     try {
-        pool_ip ip_pool;
+      pool_ip ip_pool;
+
         for(std::string line; std::getline(std::cin, line);) {
-            auto v = split(line, '\t');
-            ip_pool.push_back(split(v.at(0), '.'));
+            auto v = split(line);
+            ip_pool.push_back(v);
         }
 
         radixSort(ip_pool);
